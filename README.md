@@ -324,3 +324,23 @@ application-dev.yml
 
 ---
 
+
+### Testing Apis
+```
+technogise@Mac eventmate % curl -X POST http://localhost:8080/api/auth/register \
+ -H "Content-Type: application/json" \
+ -d '{"name":"Aashish","email":"ash@example.com","password":"secret123","role":"organizer"}'
+
+{"id":1,"name":"Aashish","email":"ash@example.com","password":"$2a$10$pYzPrCe/T/oqwiL4Fg.8DeaSpR34SqhLiasHuZtk9WQAXseDdZLhu","role":"ORGANIZER"}%     
+
+
+technogise@Mac eventmate % curl -X POST http://localhost:8080/api/auth/login \
+ -H "Content-Type: application/json" \
+ -d '{"email":"ash@example.com","password":"secret123"}'
+
+{"token":"eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhc2hAZXhhbXBsZS5jb20iLCJyb2xlIjoiT1JHQU5JWkVSIiwiaWF0IjoxNzYzMDEwMDkxLCJleHAiOjE3NjMwMTM2OTF9.MSgZHMJ5yoBIFyUiqQ40KM0FKsMmWWnsl67c8O9FO1T8jua2oogPsaN2IvEbJK7l"}%                         
+
+
+technogise@Mac eventmate % 
+
+```
